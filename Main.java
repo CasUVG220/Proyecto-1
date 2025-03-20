@@ -3,7 +3,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         try {
-            List<Object> expresiones = Lector.leerArchivo("codigo.lisp");
+            List<Object> expresiones = Lector.leerArchivo("Lisp.txt");
             Environment entorno = new Environment();
             Evaluador evaluador = new Evaluador(entorno);
 
@@ -18,14 +18,5 @@ public class Main {
         } catch (Exception e) {
             System.err.println("Error al leer archivo: " + e.getMessage());
         }
-    }
-}
-
-
-    
-}
-        }
-
-        scanner.close();
     }
 }
