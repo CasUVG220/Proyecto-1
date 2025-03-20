@@ -1,31 +1,26 @@
-import java.util.List;
-import java.util.Scanner;
-
 import java.util.*;
 
-
 public class Main {
-
     public static void main(String[] args) {
         try {
-            String ruta = "Lisp.txt"; // o el nombre real de tu archivo
-            List<Object> expresiones = Lector.leerArchivo(ruta);
-
+            List<Object> expresiones = Lector.leerArchivo("codigo.lisp");
             Environment entorno = new Environment();
             Evaluador evaluador = new Evaluador(entorno);
 
             for (Object expresion : expresiones) {
-                Object resultado = evaluador.evaluar(expresion);
-                if (resultado != null && !resultado.toString().trim().isEmpty()) {
-                    System.out.println("Resultado: " + resultado);
+                try {
+                    evaluador.evaluar(expresion);
+                } catch (Exception e) {
+                    System.err.println("Error general: " + e.getMessage());
                 }
             }
-            
 
         } catch (Exception e) {
-            System.err.println("Error general: " + e.getMessage());
+            System.err.println("Error al leer archivo: " + e.getMessage());
         }
     }
+}
+
 
     
 }
