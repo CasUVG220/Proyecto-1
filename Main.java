@@ -1,3 +1,12 @@
+/**
+
+Clase principal del intérprete Lisp.
+Se encarga de iniciar el entorno, leer el archivo de código Lisp
+y evaluar cada expresión utilizando el Evaluador.
+Solo se imprime en consola si el usuario utiliza la función (print ...).
+
+**/ 
+
 import java.util.*;
 
 public class Main {
