@@ -1,0 +1,9 @@
+(setq base 5)
+(setq altura 10)
+(print (* base altura))
+
+(defun guardar-area (a b)
+  (* a b)
+)
+(setq resultado (guardar-area 3 6))
+(print resultado)
