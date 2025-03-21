@@ -1,7 +1,18 @@
+/**
+ * Clase Defun.
+ * Implementa la definición de funciones en Lisp mediante la instrucción (defun ...).
+ * Permite almacenar funciones definidas por el usuario, incluyendo recursividad y paso de parámetros.
+ */
 import java.util.*;
 
 public class Defun {
-
+    /**
+     * Evalúa una definición de función.
+     * @param lista Lista con la definición: (defun nombre (parametros) cuerpo).
+     * @param evaluador Referencia al evaluador principal.
+     * @param entorno Entorno de ejecución donde se almacenará la función.
+     * @return null (no se imprime nada al definir una función).
+     */
     public static Object evaluar(List<Object> lista, Environment entorno) {
         if (lista.size() != 4) {
             throw new IllegalArgumentException("Uso incorrecto de defun");
