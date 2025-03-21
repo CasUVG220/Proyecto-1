@@ -7,3 +7,31 @@
 )
 (setq resultado (guardar-area 3 6))
 (print resultado)
+
+(defun potencia (b e)
+  (cond
+    ((= e 0) 1)
+    (t (* b (potencia b (- e 1)))))
+)
+(print (potencia 2 5))
+
+(defun volumen-cubo (lado)
+  (* (potencia lado 3) 1)
+)
+(print (volumen-cubo 4))
+
+(print (atom base))
+(print (atom '(x y z)))
+(print (list '(a b c)))
+(print (equal '(a b) '(a b)))
+
+(setq datos (quote (nombre edad direccion)))
+(print datos)
+(setq valores '("Juan" 30 "Guatemala"))
+(print valores)
+
+(setq n 8)
+(print (cond
+  ((< n 5) 'pequeño)
+  ((= n 8) 'medio)
+  (t 'grande)))
